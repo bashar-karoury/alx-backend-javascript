@@ -64,3 +64,19 @@ function executeWork(employee: any) {
 
 console.log(executeWork(createEmployee(200)));
 console.log(executeWork(createEmployee(1000)));
+
+
+type subjects = "Math" | "History";
+
+function teachClass(todayClass: subjects): string {
+	if (todayClass === 'Math') {
+		return 'Teaching Math';
+	}
+	if (todayClass === 'History') {
+		return 'Teaching History';
+	}
+}
+
+console.log(teachClass('Math'));
+console.log(teachClass('History'));
+
