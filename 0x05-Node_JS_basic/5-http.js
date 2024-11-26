@@ -22,9 +22,9 @@ const countStudents = function countStudents(path) {
         fieldsData[last].push(first);
       }
       for (const [key, value] of Object.entries(fieldsData)) {
-        result += `Number of students in ${key}: ${value.length}. List: ${value.join(', ')}`;
+        result += `Number of students in ${key}: ${value.length}. List: ${value.join(', ')}\n`;
       }
-      resolve(result);
+      resolve(result.trim());
     });
   });
 };
