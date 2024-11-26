@@ -13,7 +13,7 @@ class StudentsController {
       response.status(200).send(result.trim());
     })
       .catch((err) => {
-        response.status(500).send(err);
+        response.status(500).send(err.message);
       });
   }
 
@@ -30,7 +30,7 @@ class StudentsController {
         response.status(200).send(result.trim());
       })
         .catch((err) => {
-          response.status(500).send(err);
+          response.status(500).send(err.message);
         });
     }
   }
