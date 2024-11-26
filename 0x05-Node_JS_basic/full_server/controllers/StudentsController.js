@@ -10,7 +10,7 @@ class StudentsController {
       for (const [key, value] of Object.entries(data)) {
         result += `Number of students in ${key}: ${value.length}. List: ${value.join(', ')}\n`;
       }
-      response.status(200).send(result);
+      response.status(200).send(result.trim());
     })
       .catch((err) => {
         response.status(500).send(err);
@@ -27,7 +27,7 @@ class StudentsController {
       const path = (process.argv.length > 2) ? process.argv[2] : '';
       readDatabase(path).then((data) => {
         const result = `List: ${data[major].join(', ')}\n`;
-        response.status(200).send(result);
+        response.status(200).send(result.trim());
       })
         .catch((err) => {
           response.status(500).send(err);
