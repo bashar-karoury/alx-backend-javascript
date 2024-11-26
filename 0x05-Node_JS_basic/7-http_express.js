@@ -6,6 +6,10 @@ const fs = require('fs');
 
 const countStudents = function countStudents(path) {
   return new Promise((resolve, reject) => {
+    if (!path) {
+      reject(Error('Cannot load the database'));
+      return;
+    }
     fs.readFile(path, 'utf-8', (err, data) => {
       if (err) {
         reject(Error('Cannot load the database'));
