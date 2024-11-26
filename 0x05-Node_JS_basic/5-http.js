@@ -36,7 +36,10 @@ const app = http.createServer((req, res) => {
   }
   if (req.url === '/students') {
     const path = process.argv.length > 2 ? process.argv[2] : '';
-    countStudents(process.argv[2]).then((data) => {
+    if (!path) {
+      throw Error('Cannot load the database');
+    }
+    countStudents(path).then((data) => {
       res.end(`This is the list of our students\n${data}`);
     }).catch((err) => res.end(err.message));
   }
