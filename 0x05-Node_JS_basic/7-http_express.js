@@ -37,12 +37,14 @@ const countStudents = function countStudents(path) {
 };
 
 app.get('/', (req, res) => {
+  res.setHeader('Content-Type', 'text/plain');
   res.send('Hello Holberton School!');
 });
 
 app.get('/students', (req, res) => {
   const path = process.argv.length > 2 ? process.argv[2] : '';
   countStudents(path).then((data) => {
+    res.setHeader('Content-Type', 'text/plain');
     res.send(`This is the list of our students\n${data}`);
   }).catch((err) => res.status(500).send(err.message));
 });
