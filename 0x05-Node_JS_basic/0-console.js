@@ -1,5 +1,6 @@
-#!/usr/bin/env node
-function displayMessage(msg) {
+const displayMessage = function displayMessage(msg) {
   process.stdout.write(msg);
-}
+  process.stdout.write('\n');
+};
+
 module.exports = displayMessage;
