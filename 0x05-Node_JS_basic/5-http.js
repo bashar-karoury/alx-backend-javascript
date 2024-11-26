@@ -22,7 +22,7 @@ const countStudents = function countStudents(path) {
         fieldsData[last].push(first);
       }
       for (const [key, value] of Object.entries(fieldsData)) {
-        result += `Number of students in ${key}: ${value.length}. List: ${value.join(', ')}\n`;
+        result += `Number of students in ${key}: ${value.length}. List: ${value.join(', ')}`;
       }
       resolve(result);
     });
@@ -32,7 +32,7 @@ const countStudents = function countStudents(path) {
 const app = http.createServer((req, res) => {
   res.setHeader('Content-Type', 'text/plain');
   if (req.url === '/') {
-    res.end('Hello Holberton School!\n');
+    res.end('Hello Holberton School!');
   }
   if (req.url === '/students') {
     countStudents(process.argv[2]).then((data) => {
