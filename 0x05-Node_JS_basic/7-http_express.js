@@ -43,8 +43,8 @@ app.get('/', (req, res) => {
 app.get('/students', (req, res) => {
   const path = process.argv.length > 2 ? process.argv[2] : '';
   countStudents(path).then((data) => {
-    res.end(`This is the list of our students\n${data}`);
-  }).catch((err) => res.status(500).end(err.message));
+    res.send(`This is the list of our students\n${data}`);
+  }).catch((err) => res.status(500).send(err.message));
 });
 
 app.listen(PORT);
