@@ -30,9 +30,9 @@ const countStudents = function countStudents(path) {
 };
 
 const app = http.createServer((req, res) => {
-  res.appendHeader('Content-Type', 'text/plain');
+  res.setHeader('Content-Type', 'text/plain');
   if (req.url === '/') {
-    res.end('Hello Holberton School!');
+    res.end('Hello Holberton School!\n');
   }
   if (req.url === '/students') {
     countStudents('database.csv').then((data) => {
