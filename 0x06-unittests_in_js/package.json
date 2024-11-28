@@ -11,7 +11,8 @@
     "author": "bashar_karoury",
     "license": "ISC",
     "devDependencies": {
-        "mocha": "^6.2.3"
+        "chai": "^4.2.0",
+        "mocha": "^6.2.2"
     },
     "dependencies": {
         "assert": "^2.1.0",
